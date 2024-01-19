@@ -14,27 +14,27 @@ const SubscriptionList: React.FC = () => {
     useState<Subscription | null>(null)
 
   useEffect(() => {
-    setTimeout(
-      () => {
-        // Fetch subscriptions from API
-        fetch('/api/subscriptions')
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok')
-            }
-            return response.json()
-          })
-          .then((data) => {
-            setSubscriptions(data)
-            setLoading(false)
-          })
-          .catch((error) => {
-            setError(error.message)
-            setLoading(false)
-          })
-      },
-      Math.random() * 10_000 + 1000,
-    )
+    // setTimeout(
+    //   () => {
+    // Fetch subscriptions from API
+    fetch('/api/subscriptions')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok')
+        }
+        return response.json()
+      })
+      .then((data) => {
+        setSubscriptions(data)
+        setLoading(false)
+      })
+      .catch((error) => {
+        setError(error.message)
+        setLoading(false)
+      })
+    // },
+    // Math.random() * 10_000 + 1000,
+    // )
   }, [])
 
   if (loading) {

@@ -1,26 +1,36 @@
-import React from 'react';
-import { Subscription } from '../interfaces/subscription';
+import React from 'react'
+import { Subscription } from '../interfaces/subscription'
 
 interface SubscriptionItemProps {
-  subscription: Subscription;
-  onOpenModal: (subscription: Subscription) => void;
+  subscription: Subscription
+  onOpenModal: (subscription: Subscription) => void
 }
 
-const SubscriptionItem: React.FC<SubscriptionItemProps> = ({ subscription, onOpenModal }) => {
+const SubscriptionItem: React.FC<SubscriptionItemProps> = ({
+  subscription,
+  onOpenModal,
+}) => {
   return (
-    <div 
+    <div
       className="flex items-center cursor-pointer hover:bg-slate-100 px-4 py-2 rounded-md"
-      data-cy="customer-item" 
+      data-cy="customer-item"
+      data-status={subscription.status}
       onClick={() => onOpenModal(subscription)}
     >
-      <div className={`w-4 h-4 rounded-full mr-4 ${subscription.status === 'active' ? 'bg-green-500' : 'bg-gray-300'}`}></div>
+      <div
+        className={`w-4 h-4 rounded-full mr-4 ${subscription.status === 'active' ? 'bg-green-500' : 'bg-gray-300'}`}
+      ></div>
       <div className="flex-1">
-        <h3 className="text-lg font-semibold">{subscription.fullName}</h3>
+        <h3 className="text-lg font-semibold">
+          {subscription.fullName}
+        </h3>
         <p className="text-gray-500">{subscription.email}</p>
       </div>
-      <p className="text-sm text-gray-700 capitalize">{subscription.status}</p>
+      <p className="text-sm text-gray-700 capitalize">
+        {subscription.status}
+      </p>
     </div>
-  );
+  )
 }
 
-export default SubscriptionItem;
+export default SubscriptionItem
