@@ -1,0 +1,14 @@
+[
+  {
+    "id": "d216125a-426a-40f9-bfa4-03bfd96cff1c",
+    "fullName": "Herman Stark",
+    "email": "Herman15@example.net",
+    "status": "active"
+  },
+  {
+    "id": "ff86ef5d-da46-4079-8ac7-44135e399627",
+    "fullName": "Liliana Parisian",
+    "email": "Liliana_Parisian@example.com",
+    "status": "active"
+  }
+]

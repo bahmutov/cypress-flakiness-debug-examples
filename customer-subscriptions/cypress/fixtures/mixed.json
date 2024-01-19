@@ -1,0 +1,32 @@
+[
+  {
+    "id": "d216125a-426a-40f9-bfa4-03bfd96cff1c",
+    "fullName": "Herman Stark",
+    "email": "Herman15@example.net",
+    "status": "active"
+  },
+  {
+    "id": "ff86ef5d-da46-4079-8ac7-44135e399627",
+    "fullName": "Liliana Parisian",
+    "email": "Liliana_Parisian@example.com",
+    "status": "active"
+  },
+  {
+    "id": "4852ee4c-8d75-49de-8d99-fb49cc03318d",
+    "fullName": "Grover Bartoletti",
+    "email": "Grover.Bartoletti@example.org",
+    "status": "inactive"
+  },
+  {
+    "id": "5e4cef59-116c-4f70-8e3f-fd8cf270c0af",
+    "fullName": "Lacy Abshire",
+    "email": "Lacy.Abshire@example.com",
+    "status": "inactive"
+  },
+  {
+    "id": "3291bea3-71a8-42e0-9199-0240827e58f1",
+    "fullName": "Gia Marvin",
+    "email": "Gia_Marvin53@example.com",
+    "status": "trial"
+  }
+]
