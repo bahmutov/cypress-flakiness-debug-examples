@@ -3,7 +3,7 @@ import { Subscription } from '@/interfaces/subscription'
 
 export const generateCustomers = () => {
   let customers: Subscription[] = []
-  let customerCount = Math.floor(Math.random() * 6) + 1
+  let customerCount = Math.floor(Math.random() * 0) + 1
 
   for (let index = 0; index < customerCount; index++) {
     let firstName = faker.person.firstName()
