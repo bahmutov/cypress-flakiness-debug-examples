@@ -3,7 +3,7 @@ import 'cypress-map'
 // https://github.com/bahmutov/cypress-if
 import 'cypress-if'
 
-it('Activates a subscription', () => {
+function activateOneSubscription() {
   cy.visit('/')
   // get all items with data-cy attribute "customer-item"
   // omit all items with data-status attribute "active"
@@ -26,4 +26,31 @@ it('Activates a subscription', () => {
       cy.contains('Subscription was activated').should('be.visible')
     })
     .else('Could not find inactive subscription')
+}
+
+it('Activates a subscription', () => {
+  cy.intercept('GET', '/api/subscriptions', {
+    fixture: 'mixed.json',
+  }).as('subscriptions')
+  activateOneSubscription()
+  // confirm the subscription network call happened
+  cy.wait('@subscriptions')
+})
+
+it('Activates a trial subscription', () => {
+  cy.intercept('GET', '/api/subscriptions', {
+    fixture: 'trial.json',
+  }).as('subscriptions')
+  activateOneSubscription()
+  // confirm the subscription network call happened
+  cy.wait('@subscriptions')
+})
+
+it('Does not activate an active subscription', () => {
+  cy.intercept('GET', '/api/subscriptions', {
+    fixture: 'active-only.json',
+  }).as('subscriptions')
+  activateOneSubscription()
+  // confirm the subscription network call happened
+  cy.wait('@subscriptions')
 })
